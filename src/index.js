@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
 import './index.css';
-import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
+const App = React.lazy(() => import('./App'));
+const Foo = React.lazy(() => import('./Foo'));
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div>
-      <App/>
-    </div>
-  </React.StrictMode>,
+  <Router>
+    <React.Suspense fallback={<></>}>
+      <Switch>
+        <Route path="/foo" component={Foo}/>
+        <Route path="/" component={App}/>
+      </Switch>
+    </React.Suspense>
+  </Router>,
   document.getElementById('root')
 );
 

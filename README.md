@@ -1,7 +1,9 @@
 # React Node Starter
 
 ## Features
-- React with typescript support
+- React
+- React Router for client side routing  
+- Typescript support
 - Node Express
 - Enrouten for directory based API routing (`server/api/data.js`)
 - Proxy middleware to fan out to external APIs (`http-proxy-middleware`)
