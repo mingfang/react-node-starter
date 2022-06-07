@@ -16,9 +16,9 @@ server.use('/druid', createProxyMiddleware({ target: process.env.DRUID, changeOr
 */
 
 // static
-server.use(express.static(path.join(__dirname, '../build')));
+server.use(express.static(path.join(__dirname, '../dist')));
 server.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
 server.listen(port, (err) => {
