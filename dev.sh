@@ -1,1 +1,4 @@
-DRUID='http://druid-internal.192.168.2.249.nip.io' npm run dev
+# set HMR port
+export WDS_SOCKET_PORT=443
+
+npm run dev

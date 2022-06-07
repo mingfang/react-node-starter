@@ -8,15 +8,4 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
-
-  //  proxy example
-  /*
-  app.use(
-    '/druid',
-    createProxyMiddleware({
-      target: 'http://localhost:3001',
-      changeOrigin: true,
-    })
-  );
-  */
 };

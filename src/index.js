@@ -1,25 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import './index.css'
 
 const App = React.lazy(() => import('./App'));
 const Foo = React.lazy(() => import('./Foo'));
 
-ReactDOM.render(
+createRoot(document.getElementById('root')).render(
   <Router>
     <React.Suspense fallback={<></>}>
-      <Switch>
-        <Route path="/foo" component={Foo}/>
-        <Route path="/" component={App}/>
-      </Switch>
+      <Routes>
+        <Route path="/foo" element={<Foo/>}/>
+        <Route path="/" element={<App/>}/>
+      </Routes>
     </React.Suspense>
-  </Router>,
-  document.getElementById('root')
+  </Router>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
