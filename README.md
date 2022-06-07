@@ -2,15 +2,15 @@
 
 ## Features
 - React
-- React Router for client side routing  
-- Typescript support
+- React Router for client side routing
+- Webpack 5 Module Federation
 - Node Express
 - Enrouten for directory based API routing (`server/api/data.js`)
 - Proxy middleware to fan out to external APIs (`http-proxy-middleware`)
 - Dockerfile
 - DEV mode features
   - Nodemon and Webpack with polling change detection (Works on NFS)
-  - Proxy from Webpack to Node (`src/setupProxy.js`)
+  - Proxy from Webpack to Node
     
 ### Commands
 
